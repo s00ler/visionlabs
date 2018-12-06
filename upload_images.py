@@ -12,5 +12,5 @@ def upload_images(dirpath, url='host:port/images'):
     P.S. Hope that use of requests is not forbidden by task rules =)
     """
     files = listdir(path.abspath(dirpath))
-    payload = [('images', open(path.abspath(file), 'rb')) for file in files if path.splitext]
+    payload = [('images', open(path.abspath(file), 'rb')) for file in files]
     return requests.post(url, files=payload)
